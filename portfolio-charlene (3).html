@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charlène Cacciola-Canals — Juriste Junior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal: #0F6E56;
+    --teal-light: #E1F5EE;
+    --teal-mid: #1D9E75;
+    --dark: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e5e5e5;
+    --bg: #fafaf8;
+    --white: #ffffff;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 4rem;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* SECTIONS */
+  section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding-top: 100px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 4rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    width: 100%;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--teal);
+    border: 1px solid var(--teal-mid);
+    padding: 5px 14px; border-radius: 20px;
+    margin-bottom: 1.5rem;
+    background: var(--teal-light);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 4.2rem; font-weight: 400; line-height: 1.08;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--teal); }
+  .hero-desc {
+    font-size: 1rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem;
+    max-width: 480px;
+  }
+  .hero-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--teal);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: #0a5040; transform: translateY(-1px); }
+  .btn-outline {
+    color: var(--dark);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+
+  .hero-visual {
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+  }
+  .hero-card-name {
+    font-family: var(--serif);
+    font-size: 1.4rem; font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  .hero-card-role { font-size: 0.85rem; color: var(--teal); margin-bottom: 1.5rem; font-weight: 500; }
+  .hero-card-divider { height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+  .hero-card-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    margin-bottom: 1rem; font-size: 0.85rem; color: var(--muted);
+  }
+  .hero-card-row span.icon { color: var(--teal); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .hero-dispo {
+    margin-top: 1.5rem;
+    background: var(--teal-light);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    color: var(--teal);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* BG DECO */
+  .bg-deco {
+    position: fixed; top: 0; right: 0; width: 50vw; height: 100vh;
+    background: linear-gradient(135deg, var(--teal-light) 0%, transparent 60%);
+    opacity: 0.3; pointer-events: none; z-index: -1;
+  }
+
+  /* SECTION TITLES */
+  .section-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500; margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 2.6rem; font-weight: 400; color: var(--dark);
+    margin-bottom: 3rem; line-height: 1.2;
+  }
+
+  /* ABOUT */
+  #about { border-top: 1px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: start; }
+  .about-text p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+  .about-text p strong { color: var(--dark); font-weight: 500; }
+  .about-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+  .skill-pill {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.8rem;
+    color: var(--dark);
+  }
+  .langs-box {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+  }
+  .langs-title { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
+  .lang-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; }
+  .lang-name { font-size: 0.9rem; color: var(--dark); font-weight: 500; }
+  .lang-level { font-size: 0.8rem; color: var(--teal); }
+  .lang-bar { height: 3px; background: var(--border); border-radius: 2px; margin-top: 4px; }
+  .lang-fill { height: 3px; background: var(--teal-mid); border-radius: 2px; }
+
+  /* FORMATIONS */
+  #formations { border-top: 1px solid var(--border); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item { position: relative; margin-bottom: 2.5rem; }
+  .timeline-dot {
+    position: absolute; left: -2rem; top: 6px;
+    width: 13px; height: 13px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--teal-mid);
+  }
+  .timeline-dot.current { background: var(--teal-mid); }
+  .timeline-meta { font-size: 0.75rem; color: var(--teal); font-weight: 500; margin-bottom: 0.3rem; letter-spacing: 0.04em; }
+  .timeline-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--dark); margin-bottom: 0.3rem; }
+  .timeline-org { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+  .timeline-detail { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .timeline-badge {
+    display: inline-block; font-size: 0.7rem; font-weight: 500;
+    background: var(--teal-light); color: var(--teal);
+    padding: 2px 10px; border-radius: 12px; margin-top: 4px;
+  }
+
+  .moocs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .mooc-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem;
+  }
+  .mooc-score { font-family: var(--serif); font-size: 1.8rem; color: var(--teal); font-weight: 400; }
+  .mooc-name { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.4; }
+  .mooc-year { font-size: 0.7rem; color: var(--border-color); color: #bbb; margin-top: 0.5rem; }
+
+  /* REALISATIONS */
+  #realisations { border-top: 1px solid var(--border); }
+  .real-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .real-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .real-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); transform: translateY(-2px); }
+  .real-tag {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.8rem;
+  }
+  .real-card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; margin-bottom: 0.7rem; line-height: 1.3; }
+  .real-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  /* CONTACT */
+  #contact { border-top: 1px solid var(--border); text-align: center; }
+  .contact-inner { max-width: 520px; margin: 0 auto; }
+  .contact-desc { color: var(--muted); margin-bottom: 2.5rem; line-height: 1.7; }
+  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px;
+    text-decoration: none; color: var(--dark);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 20px; font-size: 0.85rem; font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-link:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem; font-size: 0.8rem; color: #bbb;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero-inner { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 3rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-deco"></div>
+
+<nav>
+  <a class="nav-logo" href="#hero">Charlène CC</a>
+  <div class="nav-links">
+    <a href="#about">Profil</a>
+    <a href="#formations">Formations</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-inner">
+    <div class="hero">
+      <h1>Charlène<br><em>Cacciola</em><br>Canals</h1>
+      <p class="hero-desc">
+        Étudiante en Licence de Droit à l'Université Toulouse Capitole, je cherche à acquérir une première expérience professionnelle en mettant mes compétences juridiques et mon sérieux au service de votre équipe.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Me contacter</a>
+        <a href="#formations" class="btn-outline">Mon parcours →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-name">Charlène Cacciola-Canals</div>
+        <div class="hero-card-role">Étudiante en Droit · UT1 Toulouse</div>
+        <div class="hero-card-divider"></div>
+        <div class="hero-card-row">
+          <span class="icon">📍</span>
+          <span>Cugnaux (31)</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="icon">📞</span>
+          <span>07 88 27 28 51</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="icon">✉️</span>
+          <span>cacciolacanalscharlene<br>@gmail.com</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="icon">🔗</span>
+          <span>linkedin.com/in/charlène-cacciolacanals</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-eyebrow">01 · Profil</div>
+  <div class="section-title">Qui suis-je ?</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Étudiante en <strong>L2 de Droit</strong> à l'Université Toulouse Capitole, j'ai validé ma première année avec mention, notamment avec <strong>17/20 en TD de Droit civil</strong>. Je me forme actuellement en droit civil et droit des affaires.
+      </p>
+      <p>
+        Curieuse et rigoureuse, j'ai enrichi mon parcours par des FOAD sur les <strong>inégalités femmes-hommes</strong> (17/20) et l'<strong>intelligence artificielle</strong> (18/20), ainsi qu'un MOOC CNFPT sur les fondamentaux de l'IA et un MOOC UT1 sur le droit des entreprises en difficulté (en cours).
+      </p>
+      <p>
+        Mon engagement associatif au sein de l'<strong>Association des anciens élèves du lycée Henri Matisse</strong> m'a permis de développer mes capacités organisationnelles et mon travail en équipe.
+      </p>
+      <div class="about-skills">
+        <span class="skill-pill">Recherche juridique</span>
+        <span class="skill-pill">Travail en équipe</span>
+        <span class="skill-pill">Éthique de travail</span>
+        <span class="skill-pill">Fiabilité</span>
+        <span class="skill-pill">Organisation</span>
+        <span class="skill-pill">Premiers secours (PSC1)</span>
+      </div>
+    </div>
+    <div>
+      <div class="langs-box">
+        <div class="langs-title">Langues</div>
+        <div>
+          <div class="lang-row">
+            <span class="lang-name">Français</span>
+            <span class="lang-level">Langue maternelle</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+        </div>
+        <div style="margin-top:1rem">
+          <div class="lang-row">
+            <span class="lang-name">Anglais</span>
+            <span class="lang-level">B2+</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" style="width:78%"></div></div>
+        </div>
+        <div style="margin-top:1rem">
+          <div class="lang-row">
+            <span class="lang-name">Espagnol</span>
+            <span class="lang-level">B1</span>
+          </div>
+          <div class="lang-bar"><div class="lang-fill" style="width:50%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATIONS -->
+<section id="formations">
+  <div class="section-eyebrow">02 · Parcours</div>
+  <div class="section-title">Expériences &amp; formations</div>
+
+  <div style="margin-bottom: 3rem;">
+    <div style="font-family: var(--serif); font-size: 1.4rem; font-weight: 500; color: var(--dark); border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; margin-bottom: 1.5rem;">Expérience professionnelle</div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot current"></div>
+        <div class="timeline-meta">Mai — Juin 2026</div>
+        <div class="timeline-title">Charlène Cacciola-Canals</div>
+        <div class="timeline-org">Normadis · Droit — Conformité</div>
+        <div class="timeline-detail" style="margin-top: 0.8rem;">
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <span style="font-size: 0.7rem; font-weight: 500; color: var(--teal); background: var(--teal-light); padding: 2px 8px; border-radius: 10px; white-space: nowrap; margin-top: 1px;">M9 · Veille</span>
+              <span>Fiche réglementaire NIS2 / RGPD</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <span style="font-size: 0.7rem; font-weight: 500; color: var(--teal); background: var(--teal-light); padding: 2px 8px; border-radius: 10px; white-space: nowrap; margin-top: 1px;">M12 · Conformité</span>
+              <span>Audit flash — modèle anonymisé</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <span style="font-size: 0.7rem; font-weight: 500; color: var(--teal); background: var(--teal-light); padding: 2px 8px; border-radius: 10px; white-space: nowrap; margin-top: 1px;">M20 · Legal Ops</span>
+              <span>Modèle de registre RGPD / AIPD (version vierge)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-family: var(--serif); font-size: 1.4rem; font-weight: 500; color: var(--dark); border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; margin-bottom: 1.5rem;">Formation</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot current"></div>
+      <div class="timeline-meta">2024 — en cours</div>
+      <div class="timeline-title">Licence de Droit</div>
+      <div class="timeline-org">Université Toulouse Capitole (UT1)</div>
+      <div class="timeline-detail">
+        L2 en cours · Droit civil · Droit des affaires<br>
+        L1 validé avec mention · Droit privé · Droit public
+      </div>
+      <span class="timeline-badge">17/20 en TD de Droit civil</span>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-meta">2024</div>
+      <div class="timeline-title">Baccalauréat général</div>
+      <div class="timeline-org">Lycée Henri Matisse</div>
+      <div class="timeline-detail">
+        Spécialités : Histoire-Géographie-Géopolitique, Anglais Monde Contemporain, SES
+      </div>
+      <span class="timeline-badge">Mention bien</span>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-meta">2023</div>
+      <div class="timeline-title">Formation Premiers Secours Civils — niveau 1</div>
+      <div class="timeline-org">PSC1</div>
+    </div>
+  </div>
+
+  <div class="moocs-grid">
+    <div class="mooc-card">
+      <div class="mooc-score">18/20</div>
+      <div class="mooc-name">FOAD — Intelligence artificielle</div>
+      <div class="mooc-year">2025</div>
+    </div>
+    <div class="mooc-card">
+      <div class="mooc-score">17/20</div>
+      <div class="mooc-name">FOAD — Inégalités femmes-hommes</div>
+      <div class="mooc-year">2025</div>
+    </div>
+    <div class="mooc-card">
+      <div class="mooc-score" style="font-size:1.1rem; margin-top:0.4rem;">✓</div>
+      <div class="mooc-name">MOOC CNFPT — Fondamentaux de l'IA</div>
+      <div class="mooc-year">2026</div>
+    </div>
+    <div class="mooc-card">
+      <div class="mooc-score" style="font-size:1.1rem; color:#bbb; margin-top:0.4rem;">⟳</div>
+      <div class="mooc-name">MOOC UT1 — Droit des entreprises en difficulté</div>
+      <div class="mooc-year">2026 · en cours</div>
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section id="realisations">
+  <div class="section-eyebrow">03 · Réalisations</div>
+  <div class="section-title">Ce que je sais faire</div>
+  <div class="real-grid">
+    <div class="real-card">
+      <div class="real-tag">M9 · Veille réglementaire</div>
+      <h3>Fiche réglementaire NIS2 / RGPD</h3>
+      <p>Rédaction d'une fiche de veille synthétisant les obligations issues de la directive NIS2 et du RGPD applicables à une structure privée. Identification des points de convergence, des échéances clés et des risques de non-conformité. Livrable : fiche réglementaire structurée (anonymisée).</p>
+    </div>
+    <div class="real-card">
+      <div class="real-tag">M12 · Conformité</div>
+      <h3>Audit flash — modèle anonymisé</h3>
+      <p>Réalisation d'un audit flash de conformité sur la base d'une grille d'analyse interne. Évaluation rapide de l'état de conformité d'une entité type sur les axes RGPD, documentation et gouvernance des données. Livrable : modèle d'audit flash réutilisable (données anonymisées).</p>
+    </div>
+    <div class="real-card">
+      <div class="real-tag">M20 · Legal Ops</div>
+      <h3>Modèle de registre RGPD / AIPD</h3>
+      <p>Conception d'un modèle de registre des activités de traitement conforme aux exigences de l'article 30 du RGPD, intégrant un volet AIPD (Analyse d'Impact relative à la Protection des Données). Livrable : document vierge prêt à l'emploi, structuré et commenté.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow">04 · Contact</div>
+  <div class="contact-inner">
+    <div class="section-title">Travaillons ensemble</div>
+    <p class="contact-desc">
+      Juriste junior en stage chez Normadis. N'hésitez pas à me contacter pour échanger.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:cacciolacanalscharlene@gmail.com" class="contact-link">✉️ Email</a>
+      <a href="tel:0788272851" class="contact-link">📞 07 88 27 28 51</a>
+      <a href="https://www.linkedin.com/in/charlène-cacciolacanals" class="contact-link" target="_blank">in LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Charlène Cacciola-Canals · Portfolio</footer>
+
+</body>
+</html>
